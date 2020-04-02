@@ -14,10 +14,28 @@ GAME RULES:
 const score = [0, 0];
 const roundScore = 0;
 const activePlayer = 0;
-const dice = Math.floor(Math.random() * 6) + 1;
 
-document.querySelector(`#current-${activePlayer}`).innerHTML = `<em> ${dice} <em>`;  // Score in Italic
+// Removing the dice from the site
+const diceDom = document.querySelector(`.dice`);
+diceDom.style.display = 'none';
 
-const x = document.querySelector(`#score-0`).textContent; // Getter (just to see)
+// Setting the initial values to 0
+document.querySelector(`#score-0`).textContent = 0;
+document.querySelector(`#current-0`).textContent = 0;
+document.querySelector(`#score-1`).textContent = 0;
+document.querySelector(`#current-1`).textContent = 0;
 
-document.querySelector(`.dice`).style.display = 'none'; // Removing the dice from the site
+document.querySelector(`.btn-roll`).addEventListener('click', () => {
+  // Random number
+  const dice = Math.floor(Math.random() * 6) + 1;
+
+  // Display the number
+  diceDom.style.display = 'block';
+  diceDom.src = `dice-${dice}.png`
+
+  // Update the roundScore if the number was NOT a 1
+});
+
+
+// document.querySelector(`#current-${activePlayer}`).innerHTML = `<em> ${dice} <em>`;  // Score in Italic
+// const x = document.querySelector(`#score-0`).textContent; // Getter (just to see)
