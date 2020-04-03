@@ -40,7 +40,7 @@ document.querySelector(`.btn-roll`).addEventListener('click', () => {
     // Display the number
     const diceDom = document.querySelector(`.dice`);
     diceDom.style.display = 'block';
-    diceDom.src = `dice-${dice}.png`
+    diceDom.src = `images/dice-${dice}.png`
 
     // Update the roundScore if the number was NOT a 1
     if (dice !== 1) {
@@ -50,7 +50,7 @@ document.querySelector(`.btn-roll`).addEventListener('click', () => {
     } else {
       // Next player
       nextPlayer();
-      diceDom.src = `icon.png`;
+      diceDom.src = `images/icon.png`;
     }
   }
 });
@@ -71,7 +71,7 @@ document.querySelector(`.btn-hold`).addEventListener('click', () => {
       document.querySelector(`.player-${activePlayer}-panel`).classList.add('winner');
       document.querySelector(`.player-${activePlayer}-panel`).classList.remove('active');
       diceDom.style.display = 'block';
-      diceDom.src = `icon-happy.png`;
+      diceDom.src = `images/icon-happy.png`;
       gamePlaying = false;
     } else {
       // Next player
