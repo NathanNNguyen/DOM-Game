@@ -1,2 +1,2 @@
-# DOM-Game
-Dice game using the DOM
+# Rolling-Game-Using-The-DOM
+
