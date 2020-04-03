@@ -1,2 +1,2 @@
-# Dice-Game-Using-The-DOM
+# Roll-the-dice
 
