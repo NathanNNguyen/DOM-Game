@@ -71,7 +71,9 @@ document.querySelector(`.btn-hold`).addEventListener('click', () => {
       document.querySelector(`.player-${activePlayer}-panel`).classList.add('winner');
       document.querySelector(`.player-${activePlayer}-panel`).classList.remove('active');
       diceDom.style.display = 'block';
+      diceDom.style.left = '45%'
       diceDom.src = `images/icon-happy.png`;
+      diceDom.classList.add('animated');
       gamePlaying = false;
     } else {
       // Next player

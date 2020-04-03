@@ -150,5 +150,34 @@ i {
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
 }
 
-.winner { background-color: #f7f7f7; }
-.winner .player-name { font-weight: 300; color: #EB4D4D; }
+/* .winner { background-color: #f7f7f7; } */
+.winner .player-name { 
+    font-weight:700;
+}
+
+.winner {
+    animation: color-change 4.5s infinite;
+}
+
+.animated {
+    animation: action .7s infinite  alternate;
+}
+
+@keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-.5rem); }
+}
+
+@keyframes color-change {
+    0% { color: #85ffdbc2; }
+    10% { color: rgb(190, 0, 117); }
+    20% { color: rgb(255, 75, 75); }
+    30% { color: rgb(255, 207, 75); }
+    40% { color: rgb(126, 255, 75); }
+    50% { color: black; }
+    60% { color: rgb(0, 28, 190); }
+    70% { color: rgb(0, 152, 190); }
+    80% { color: rgb(190, 92, 0); }
+    80% { color: rgb(159, 0, 190); }
+    100% { color: #5b7648; }
+}
