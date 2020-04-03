@@ -11,12 +11,12 @@ GAME RULES:
 
 // Making variables to keep score of the game
 
-const score = [0, 0];
-const roundScore = 0;
-const activePlayer = 0;
+let score = [0, 0];
+let roundScore = 0;
+let activePlayer = 0;
 
 // Removing the dice from the site
-const diceDom = document.querySelector(`.dice`);
+let diceDom = document.querySelector(`.dice`);
 diceDom.style.display = 'none';
 
 // Setting the initial values to 0
@@ -34,6 +34,28 @@ document.querySelector(`.btn-roll`).addEventListener('click', () => {
   diceDom.src = `dice-${dice}.png`
 
   // Update the roundScore if the number was NOT a 1
+  if (dice !== 1) {
+    roundScore += dice;
+    document.querySelector(`#current-${activePlayer}`).textContent = roundScore;
+  } else {
+    // if active === 0 => activePlayer = 1 else activePlayer = 0
+    document.querySelector(`#current-${activePlayer}`).textContent = 0;
+    roundScore = 0;
+    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+
+    document.querySelector(`.player-0-panel`).classList.toggle(`active`);
+    document.querySelector(`.player-1-panel`).classList.toggle(`active`);
+
+    diceDom.src = `icon.png`;
+
+    // if (activePlayer === 0) {
+    //   document.querySelector(`.player-0-panel`).classList.remove(`active`);
+    //   document.querySelector(`.player-1-panel`).classList.add(`active`);
+    // } else {
+    //   document.querySelector(`.player-1-panel`).classList.remove(`active`);
+    //   document.querySelector(`.player-0-panel`).classList.add(`active`);
+    // }
+  }
 });
 
 
