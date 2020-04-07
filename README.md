@@ -1,3 +1,3 @@
 # Dice game using the DOM
 
-<a href='https://nn-rollthedice.netlify.com/'>Demo</a>
+<a href='https://nn-rollthedice.netlify.com/' target='_blank'>Demo</a>
